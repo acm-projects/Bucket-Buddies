@@ -97,5 +97,6 @@ Have you ever had a bucket list of things to do with your friends but had troubl
 - [Git basics](https://www.youtube.com/watch?v=USjZcfj8yxE)
 - [Figma](https://www.figma.com/)
 - [Postman](https://www.postman.com/)
-  - [Tutorials](https://learning.postman.com/docs/introduction/overview/)https://learning.postman.com/docs/introduction/overview/
-- [Pitch](https://pitch.com/)https://pitch.com/ / [Canva](https://www.canva.com/)https://www.canva.com/
+  - [Tutorials](https://learning.postman.com/docs/introduction/overview/)
+- [Pitch](https://pitch.com/)
+- [Canva](https://www.canva.com/)
