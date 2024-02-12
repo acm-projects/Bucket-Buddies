@@ -104,5 +104,6 @@ Have you ever had a bucket list of things to do with your friends but had troubl
 ## Meet the team!
 
 - Erin Turgut
-- Andrew
-- Bennett
+- Andrew Alexander
+- Bennett Feigenbaum
+- Jonathan Lee
