@@ -101,6 +101,8 @@ Have you ever had a bucket list of things to do with your friends but had troubl
 - [Pitch](https://pitch.com/)
 - [Canva](https://www.canva.com/)
 
-- Andrew
-- Erin Turgut
+## Meet the team!
 
+- Erin Turgut
+- Andrew
+- Bennett
