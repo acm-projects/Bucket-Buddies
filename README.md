@@ -102,5 +102,9 @@ Have you ever had a bucket list of things to do with your friends but had troubl
 - [Canva](https://www.canva.com/)
 - Jonathan
 
+<<<<<<< HEAD
+## Meet the team!
+=======
 
 - Erin Turgut
+>>>>>>> 25c6418fde5d33b630f45423a843bb2899826ccf
