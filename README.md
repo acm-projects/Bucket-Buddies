@@ -100,3 +100,5 @@ Have you ever had a bucket list of things to do with your friends but had troubl
   - [Tutorials](https://learning.postman.com/docs/introduction/overview/)
 - [Pitch](https://pitch.com/)
 - [Canva](https://www.canva.com/)
+
+## Meet the team!
