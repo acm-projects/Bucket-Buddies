@@ -1,32 +1,38 @@
+
+![bucketbuds](https://github.com/acm-projects/Bucket-Buddies/assets/94258142/666a065d-bc28-4e89-973c-83d0119da3ef)
+
 # Bucket-Buddies
 
 Have you ever had a bucket list of things to do with your friends but had trouble making those dreams a reality? If only you could keep track of all the ideas and make sure you're making time to make those memories. Oh wait -- you can, with Bucket Buddies! Add ideas to a group bucket list, upvote your favorites, share availability, and solidify plans inside the app. Bucket Buddies will make sure you don't forget about those bucket list ideas OR about the plans you've already set.
 
 ## MVP 🏆
 
-- User profiles, adding friends
-- Group creation
-  - Users can:
-    - Add their bucket list ideas
-    - Upvote their favorite ideas posted in the group
-- Plan creation
-  - Users can:
-    - Provide their availability
-    - Select a time and finalize the plan
-    - Confirm whether they are attending
+- User profiles
+- Adding friends
+- Creation of shared bucket lists
+  - Any user in the group can add bucket list ideas
+  - Any user can upvote their favorite ideas in the shared list
+  - Popular ideas are made obvious
+- Chat function for users to discuss plans
+- Built in availability sharing to find meeting times
+- When an idea is being turned into a plan
+  - Availability sharing will be prompted
+  - A date and time will be finalized
+  - Users will be prompted to confirm whether they are attending
 - Notification system
   - Reminders about:
-    - Making a plan for items on the bucket list (starting with the most upvoted ideas)
-    - A plan having been created, to encourage users to hop on and share their availability
+    - Chat messages
+    - Highly upvoted ideas needing to be finalized into plans
+    - A plan having been created, prompting users to hop on and share their availability
     - Upcoming plans that have been finalized so that the group does not forget
-- Google Calendar integration
 
 ## Stretch Goals ⏳
 
-- Chat feature for plan discussion
-- A poll feature to help users make decisions about which plans to pursue and the specific details of carrying them out
-- A personal photo journal where users can upload photos or write journal entries about the things they got together and did with Bucket Buddies
-- A year in review to remind users how much they enjoyed actually doing the things they wanted to do
+- Google Calendar integration
+- Idea generator where users can input locations and it will generate popular activities nearby
+- A photo archive where users can upload photos of the things they did
+- Invite/shortcut link to drop in other chats to get people to switch over to Bucket Buddies for planning
+- Personal bucket lists with private and public ideas
 
 ## Milestones 📆
 
@@ -40,10 +46,6 @@ Have you ever had a bucket list of things to do with your friends but had troubl
 | 9/10 | Create and practice presentation; add finishing touches to app |  |  |
 
 ## Tech Stack 💻
-
-- Side note: React Native + MERN Stack is also an option; higher learning curve but also more appealing on participant resumes
-  - Discuss with participants Week 1
-  - Will switch out Flutter/Firebase resources for MERN stack resources if this decision is reached
 
 - Front-End: Flutter
   - Widgets for UI design and easy integration with Firebase
@@ -101,5 +103,9 @@ Have you ever had a bucket list of things to do with your friends but had troubl
 - [Pitch](https://pitch.com/)
 - [Canva](https://www.canva.com/)
 
+## Meet the team!
 
 - Erin Turgut
+- Andrew Alexander
+- Bennett Feigenbaum
+- Jonathan Lee
