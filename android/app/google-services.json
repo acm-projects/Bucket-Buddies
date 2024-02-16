@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "781525005266",
+    "project_id": "bucket-buddies-34fb8",
+    "storage_bucket": "bucket-buddies-34fb8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:781525005266:android:cb95bfceca0ff37175ce0b",
+        "android_client_info": {
+          "package_name": "com.example.bucket_buddies_frontend"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAKXP8cLyjOXOGWJXmeoAtBlQs7tY_TulQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
