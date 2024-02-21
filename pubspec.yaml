@@ -30,7 +30,7 @@ flutter:
      - family: LuckiestGuy
        fonts:
          - asset: fonts/LuckiestGuy-Regular.ttf
-     - family: AcmeRegular
+     - family: LatoRegular
        fonts:
-         - asset: fonts/Acme-Regular.ttf
+         - asset: fonts/Lato-Regular.ttf
 

@@ -22,6 +22,7 @@ class BucketBuddies extends StatelessWidget {
           ),
         ),
       ),
+      //creating map for navigating pages
       initialRoute: WelcomeScreen.id,
       routes: {
         WelcomeScreen.id: (context) => WelcomeScreen(),
