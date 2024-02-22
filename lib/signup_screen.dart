@@ -1,3 +1,4 @@
+import 'package:bucket_buddies_frontend/home_screen.dart';
 import 'package:flutter/material.dart';
 
 class SignUpScreen extends StatefulWidget {
@@ -17,7 +18,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF083939),
+      //backgroundColor: Color(0xFF083939),
+      backgroundColor: Color(0xffb2ffff),
       appBar: AppBar(
         title: Text('Sign Up'),
         titleTextStyle: TextStyle(
@@ -39,7 +41,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
             Text(
               ' Bucket Buddies',
               style: TextStyle(
-                color: Colors.white,
+                color: Color(0xFF19ADAD),
                 fontFamily: 'LuckiestGuy',
                 fontSize: 50.0,
               ),
@@ -50,9 +52,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
             Text(
               'Create Your Account',
               style: TextStyle(
-                color: Colors.white,
+                color: Color(0xFF19ADAD),
                 fontFamily: 'LatoRegular',
                 fontSize: 25.0,
+                fontWeight: FontWeight.bold,
               ),
             ),
             SizedBox(
@@ -123,6 +126,40 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 userPassword = value; //assign entered password to userPassword variable
                 //print(userPassword);
               },
+            ),
+            SizedBox(
+              height: 60.0,
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(vertical: 16.0),
+              child: Material(
+                color: Color(0xFF19ADAD),
+                borderRadius: BorderRadius.circular(30.0),
+                elevation: 5.0,
+                child: MaterialButton(
+                  onPressed: () {
+                    //for now, sign up will lead to home screen. Might want to add confirmation screen later
+                    //to let user know they've successfully created an account
+                    Navigator.pushNamed(context, HomeScreen.id);
+
+                    //also, may need some sort of loading screen while we're waiting on backend to authenticate user
+                    //(this applies to both the sign up and login pages)
+                  },
+                  minWidth: 200.0,
+                  height: 42.0,
+                  child: Text(
+                    'Sign Up',
+                    style:
+                    TextStyle (
+                      height: 2.0,
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: 'AcmeRegular',
+                      fontSize: 27.0,
+                    ),
+                  ),
+                ),
+              ),
             ),
           ],
         ),

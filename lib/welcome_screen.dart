@@ -18,7 +18,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF083939),
+      //backgroundColor: Color(0xFF083939),
+      backgroundColor: Color(0xffb2ffff),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 24.0),
         child: Column(
@@ -32,7 +33,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             Text(
                 ' Bucket Buddies',
                 style: TextStyle(
-                  color: Colors.white,
+                  //color: Colors.white,
+                  color: Color(0xFF19ADAD),
                   fontFamily: 'LuckiestGuy',
                   fontSize: 50.0,
                 ),

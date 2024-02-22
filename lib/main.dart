@@ -1,3 +1,4 @@
+import 'package:bucket_buddies_frontend/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'welcome_screen.dart';
 import 'login_screen.dart';
@@ -28,6 +29,7 @@ class BucketBuddies extends StatelessWidget {
         WelcomeScreen.id: (context) => WelcomeScreen(),
         LoginScreen.id: (context) => LoginScreen(),
         SignUpScreen.id: (context) => SignUpScreen(),
+        HomeScreen.id: (context) => HomeScreen(),
       },
     );
   }
