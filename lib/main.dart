@@ -1,125 +1,299 @@
 import 'package:flutter/material.dart';
+import 'signup_screen.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    double ffem = 1.0; // This represents the font size scaling factor
+    double fem = 1.0;
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // TRY THIS: Try running your application with "flutter run". You'll see
-        // the application has a purple toolbar. Then, without quitting the app,
-        // try changing the seedColor in the colorScheme below to Colors.green
-        // and then invoke "hot reload" (save your changes or press the "hot
-        // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
-        //
-        // Notice that the counter didn't reset back to zero; the application
-        // state is not lost during the reload. To reset the state, use hot
-        // restart instead.
-        //
-        // This works for code too, not just values: Most code changes can be
-        // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
-    return Scaffold(
-      appBar: AppBar(
-        // TRY THIS: Try changing the color here to a specific color (to
-        // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
-        // change color while the other colors stay the same.
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
-      ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          //
-          // TRY THIS: Invoke "debug painting" (choose the "Toggle Debug Paint"
-          // action in the IDE, or press "p" in the console), to see the
-          // wireframe for each widget.
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-          ],
+      home: Scaffold(
+        body: SingleChildScrollView(
+          child: buildBody(ffem, fem),
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+    );
+  }
+
+  Widget buildBody(double ffem, double fem) {
+    return Container(
+      padding: EdgeInsets.fromLTRB(25 * fem, 126 * fem, 25 * fem, 263 * fem),
+      width: double.infinity,
+      decoration: const BoxDecoration(
+        color: Color(0xffb2ffff),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          buildSignInText(ffem),
+          buildEmailContainer(ffem, fem),
+          buildPasswordContainer(ffem, fem),
+          buildForgotPasswordText(ffem, fem),
+          buildLogInButton(ffem, fem),
+          buildDontHaveAnAccount(ffem, fem),
+        ],
+      ),
+    );
+  }
+
+  Widget buildSignInText(double ffem) {
+    return Container(
+      margin: EdgeInsets.fromLTRB(0, 0, 210 * ffem, 43 * ffem),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Container(
+            margin: EdgeInsets.fromLTRB(0, 0, 0, 5 * ffem),
+            child: Text(
+              'Sign in',
+              style: TextStyle(
+                fontFamily: 'Baloo',
+                fontSize: 24 * ffem,
+                fontWeight: FontWeight.w400,
+                height: 1.2575 * ffem,
+                color: const Color(0xff1e1e1e),
+              ),
+            ),
+          ),
+          Text(
+            'Hello, Welcome Back!',
+            style: TextStyle(
+              fontFamily: 'Baloo',
+              fontSize: 13 * ffem,
+              fontWeight: FontWeight.w400,
+              height: 1.2575 * ffem,
+              color: const Color(0xff1e1e1e),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget buildEmailContainer(double ffem, double fem) {
+    return Container(
+      margin: EdgeInsets.fromLTRB(0, 0, 0, 24 * fem),
+      width: double.infinity,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Container(
+            margin: EdgeInsets.fromLTRB(3 * fem, 0, 0, 11 * fem),
+            child: Text(
+              'Email Address:',
+              style: TextStyle(
+                fontFamily: 'Baloo',
+                fontSize: 14 * ffem,
+                fontWeight: FontWeight.w400,
+                height: 1.2575 * ffem,
+                color: const Color(0xff000000),
+              ),
+            ),
+          ),
+          Container(
+            padding: EdgeInsets.fromLTRB(
+                15 * fem, 12 * fem, 15 * fem, 12 * fem),
+            width: double.infinity,
+            height: 48 * fem,
+            decoration: BoxDecoration(
+              border: Border.all(color: const Color(0xff61a2b1), width: 2),
+              // Set the border width here
+              color: const Color(0xffffffff),
+              borderRadius: BorderRadius.circular(10 * fem),
+            ),
+            child: Container(
+              padding: EdgeInsets.fromLTRB(2 * fem, 2 * fem, 0, 4 * fem),
+              width: 130 * fem,
+              height: double.infinity,
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Container(
+                    margin: EdgeInsets.fromLTRB(0, 2 * fem, 9.5 * fem, 0),
+                    width: 20 * fem,
+                    height: 16 * fem,
+                    child: Image.asset(
+                      'assets/images/BB_Email_Icon.png',
+                      width: 20 * fem,
+                      height: 16 * fem,
+                      fit: BoxFit.contain,
+                    ),
+                  ),
+                  Text(
+                    'Enter your email',
+                    style: TextStyle(
+                      fontFamily: 'Baloo',
+                      fontSize: 14 * ffem,
+                      fontWeight: FontWeight.w400,
+                      height: 1.2575 * ffem,
+                      color: const Color(0xffcacaca),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget buildPasswordContainer(double ffem, double fem) {
+    return Container(
+      margin: EdgeInsets.fromLTRB(0, 0, 0, 8 * fem),
+      width: double.infinity,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Container(
+            margin: EdgeInsets.fromLTRB(3 * fem, 0, 0, 8 * fem),
+            child: RichText(
+              text: TextSpan(
+                style: TextStyle(
+                  fontFamily: 'Poppins',
+                  fontSize: 14 * ffem,
+                  fontWeight: FontWeight.w700,
+                  height: 1.5 * ffem,
+                  color: const Color(0xff000000),
+                ),
+                children: [
+                  TextSpan(
+                    text: 'Password:',
+                    style: TextStyle(
+                      fontFamily: 'Baloo',
+                      fontSize: 14 * ffem,
+                      fontWeight: FontWeight.w400,
+                      height: 1.2575 * ffem,
+                      color: const Color(0xff000000),
+                    ),
+                  ),
+                  const TextSpan(
+                    text: '',
+                  ),
+                ],
+              ),
+            ),
+          ),
+          SizedBox(
+            width: double.infinity,
+            height: 48 * fem,
+            child: Container(
+              padding: EdgeInsets.fromLTRB(
+                  18 * fem, 14 * fem, 11 * fem, 12 * fem),
+              width: double.infinity,
+              height: double.infinity,
+              decoration: BoxDecoration(
+                border: Border.all(color: const Color(0xff61a2b1), width: 2),
+                // Set the border width here
+                color: const Color(0xffffffff),
+                borderRadius: BorderRadius.circular(10 * fem),
+              ),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Container(
+                    margin: EdgeInsets.fromLTRB(0, 0, 12 * fem, 0),
+                    width: 18 * fem,
+                    height: 20 * fem,
+                    child: Image.asset(
+                      'assets/images/BB_Password_Icon.png',
+                      width: 18 * fem,
+                      height: 20 * fem,
+                      fit: BoxFit.contain,
+                    ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.fromLTRB(0, 1.5, 120 * fem, 0 * fem),
+                    child: Text(
+                      'Enter your password',
+                      style: TextStyle(
+                        fontFamily: 'Baloo',
+                        fontSize: 14 * ffem,
+                        fontWeight: FontWeight.w400,
+                        height: 1.2575 * ffem,
+                        color: const Color(0xffcacaca),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    width: 22 * fem,
+                    height: 22 * fem,
+                    child: Image.asset(
+                      'assets/images/BB_Hide_Password_Icon.png',
+                      width: 22 * fem,
+                      height: 22 * fem,
+                      fit: BoxFit.contain,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+
+  Widget buildForgotPasswordText(double ffem, double fem) {
+    return Container(
+      margin: EdgeInsets.fromLTRB(196 * fem, 0, 0, 112 * fem),
+      child: Text(
+        'Forgot Password?',
+        style: TextStyle(
+          fontFamily: 'Baloo',
+          fontSize: 14 * ffem,
+          fontWeight: FontWeight.w400,
+          height: 1.2575 * ffem,
+          color: const Color(0xff46019f),
+        ),
+      ),
+    );
+  }
+
+  Widget buildLogInButton(double ffem, double fem) {
+    return Container(
+      margin: EdgeInsets.fromLTRB(1 * fem, 0, 0, 0),
+      width: 342 * fem,
+      height: 50 * fem,
+      decoration: BoxDecoration(
+        color: const Color(0xff1ed2d2),
+        borderRadius: BorderRadius.circular(34 * fem),
+      ),
+      child: Center(
+        child: Text(
+          'Log In',
+          style: TextStyle(
+            fontFamily: 'Baloo',
+            fontSize: 14 * ffem,
+            fontWeight: FontWeight.w400,
+            height: 1.2575 * ffem,
+            color: const Color(0xffffffff),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget buildDontHaveAnAccount(double ffem, double fem) {
+    return Container(
+      margin: EdgeInsets.fromLTRB(120 * fem, 10 * fem, 0, 0),
+      width: 342 * fem,
+      height: 50 * fem,
+      child: Text(
+        'New to Bucket Buddies? Sign Up!',
+        style: TextStyle(
+          fontFamily: 'Baloo',
+          fontSize: 14 * ffem,
+          fontWeight: FontWeight.w400,
+          height: 1.2575 * ffem,
+          color: const Color(0xff46019f),
+        ),
+      ),
     );
   }
 }
