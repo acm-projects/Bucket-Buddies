@@ -37,6 +37,8 @@ dependencies:
   cupertino_icons: ^1.0.2
 
 dev_dependencies:
+  carousel_slider: ^4.2.1
+
   flutter_test:
     sdk: flutter
 
@@ -67,6 +69,7 @@ flutter:
     - assets/images/BB_Email_Icon.png
     - assets/images/BB_Password_Icon.png
     - assets/images/BB_Hide_Password_Icon.png
+    - assets/images/BB_Splash_Screen.png
 
   # To add assets to your application, add an assets section, like this:
   # assets:
