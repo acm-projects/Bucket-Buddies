@@ -4,6 +4,7 @@ import 'welcome_screen.dart';
 import 'login_screen.dart';
 import 'signup_screen.dart';
 import 'group_info.dart';
+import 'bucketlist_group_viewer.dart';
 
 void main() {
   runApp(const BucketBuddies());
@@ -32,6 +33,7 @@ class BucketBuddies extends StatelessWidget {
         SignUpScreen.id: (context) => SignUpScreen(),
         HomeScreen.id: (context) => HomeScreen(groupName: '',),
         GroupInfo.id: (context) => GroupInfo(),
+        BucketListGroupViewer.id: (context) => BucketListGroupViewer(),
       },
     );
   }
