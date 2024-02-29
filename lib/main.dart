@@ -1,5 +1,5 @@
-import 'dart:async';
 import 'package:flutter/material.dart';
+import 'signup_screen.dart';
 
 void main() => runApp(const MyApp());
 
@@ -8,66 +8,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Your App Title',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: SplashScreen(), // Set SplashScreen as the home screen
-    );
-  }
-}
-
-class SplashScreen extends StatefulWidget {
-  const SplashScreen({Key? key}) : super(key: key);
-
-  @override
-  _SplashScreenState createState() => _SplashScreenState();
-}
-
-class _SplashScreenState extends State<SplashScreen> {
-  @override
-  void initState() {
-    super.initState();
-    // Simulate a delay for 3 seconds before navigating to the main screen
-    Timer(
-      Duration(seconds: 3),
-          () => Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (context) => const MyAppContent()),
-      ),
-    );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage('assets/images/BB_Splash_Screen.png'), // Splash screen image
-            fit: BoxFit.cover,
-          ),
-        ),
-        child: Center(
-          // You can add your splash screen content here, such as a logo
-          // Exa
-        ),
-      ),
-    );
-  }
-}
-
-class MyAppContent extends StatelessWidget {
-  const MyAppContent({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
     double ffem = 1.0; // This represents the font size scaling factor
     double fem = 1.0;
-    return Scaffold(
-      body: SingleChildScrollView(
-        child: buildBody(ffem, fem),
+    return MaterialApp(
+      home: Scaffold(
+        body: SingleChildScrollView(
+          child: buildBody(ffem, fem),
+        ),
       ),
     );
   }
