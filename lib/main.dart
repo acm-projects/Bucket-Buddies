@@ -8,6 +8,13 @@ import 'bucketlist_group_viewer.dart';
 
 void main() {
   runApp(const BucketBuddies());
+
+/*Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform,
+  );*/
+  //runApp(const MyApp());
 }
 
 class BucketBuddies extends StatelessWidget {
