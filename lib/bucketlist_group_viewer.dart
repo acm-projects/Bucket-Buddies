@@ -60,15 +60,16 @@ class MyApp extends StatelessWidget {
             // Bottom navbar
             Container(
               color: const Color(0xff51A7A7),
-              padding: EdgeInsets.fromLTRB(
-                  25 * fem, 25 * fem, 25 * fem, 25 * fem),
-              child: const Row(
+              width: 393 * fem,
+              height: 94 * fem,
+              child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Icon(Icons.home),
-                  Icon(Icons.search),
-                  Icon(Icons.notifications),
-                  Icon(Icons.settings),
+                  Image.asset('assets/images/BB_Nav_Home.png'),
+                  Image.asset('assets/images/BB_Nav_Calendar.png'),
+                  Image.asset('assets/images/BB_Add_Group.png'),
+                  Image.asset('assets/images/BB_Nav_Messages.png'),
+                  Image.asset('assets/images/BB_Nav_Profile.png'),
                 ],
               ),
             ),
