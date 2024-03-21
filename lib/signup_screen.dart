@@ -10,6 +10,7 @@ class SignUpScreen extends StatefulWidget {
 
 class _SignUpScreenState extends State<SignUpScreen> {
 
+  //final _auth = FirebaseAuth.instance; //BACKEND
   //variables to store user input in sign up page text fields
   String userName = '';
   String userEmail = '';
@@ -85,6 +86,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               height: 20.0,
             ),
             TextField(
+              keyboardType: TextInputType.emailAddress, //makes it so that email typing keyboard appears
               style: TextStyle(
                 color: Color(0xFF083939),
               ),
@@ -108,6 +110,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               height: 20.0,
             ),
             TextField(
+              obscureText: true, //makes it so that password being typed can't be seen
               style: TextStyle(
                 color: Color(0xFF083939),
               ),
@@ -137,10 +140,22 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 borderRadius: BorderRadius.circular(30.0),
                 elevation: 5.0,
                 child: MaterialButton(
-                  onPressed: () {
+                  onPressed: () /*async*/ {
+
+                    ////////registering user//////////ATTENTION BACKEND!!!!!!
+                    //try{
+                    //final newUser = await _auth.createUserWithEmailAndPassword(email: userEmail, password: userPassword);
+                    //if (newUser != null){
+                    //Navigator.pushNamed(context, HomeScreen.id);
+                    //}
+                    //} catch (e) {
+                    // print(e);
+                    //}
+                    ////////////////////////////////////////////////////////
+
                     //for now, sign up will lead to home screen. Might want to add confirmation screen later
                     //to let user know they've successfully created an account
-                    Navigator.pushNamed(context, HomeScreen.id);
+                    Navigator.pushNamed(context, HomeScreen.id); //this line will be deleted once user auth is activated
 
                     //also, may need some sort of loading screen while we're waiting on backend to authenticate user
                     //(this applies to both the sign up and login pages)

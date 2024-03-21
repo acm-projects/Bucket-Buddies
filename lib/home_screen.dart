@@ -5,38 +5,96 @@ import 'group_tile.dart';
 class HomeScreen extends StatefulWidget {
   static const String id = 'home_screen';
 
-  String groupName; //need to remove
-
-  HomeScreen({required this.groupName}); //need to remove
-
   @override
 
   _HomeScreenState createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  //int numGroups = 0;
+  //final _firestore = Firestore.instance; //for storing data to database
+
+  ////////ATTENTION BACKEND!!!!! - UPDATING CURRENT USER//////////
+  //final _auth = FirebaseAuth.instance;
+  //FirebaseUser loggedInUser;
+
+  /*@override
+  void initState() {
+    super.initState();
+
+    getCurrentUser();
+    loadGroupData();
+  }*/
+
+  /*
+  void getCurrentUser() async {
+    try {
+      final user = await _auth.currentUser();
+      if (user != null){
+        loggedInUser = user;
+        print(loggedInUser.email);
+      }
+    } catch (e) {
+      print(e);
+    }
+  }
+  */
+  ///////////////////////////////////////////////////////////
 
   String? groupTitle;
 
   List<GroupTile> allGroups = [];
-
+  /*This function navigates to GroupInfo page for user to enter the group name and then a new group tile is created*/
   Future <void> createGroup() async {
 
-    Object? tester = await Navigator.pushNamed(context, GroupInfo.id);
+    Object? enteredGroupTitle = await Navigator.pushNamed(context, GroupInfo.id);
+    
     setState(() {
-      groupTitle = tester as String?;
+      groupTitle = enteredGroupTitle as String?;
 
       GroupTile newGroup = new GroupTile(groupTitle!);
-      allGroups.add(newGroup);
+      ///////ATTENTION BACKEND!!!!! - adding a new group to the user's database (within a collection called 'groups')/////////
+      //_firestore.collection('groups').add({
+      // 'group name': groupTitle});
+      allGroups.add(newGroup); //might remove this line and replace with the following line:
+      //loadGroupFromData();
     });
   }
+  //ATTENTION BACKEND: This function will be called to create group tile for groups that are found in the database
+  /*void createGroupFromData(String passedGroupTitle) {
+
+    setState(() {
+      groupTitle = passedGroupTitle;
+
+      GroupTile newGroup = new GroupTile(groupTitle!);
+
+      allGroups.add(newGroup); //might remove this line
+    });
+  }*/
+
+  //ATTENTION BACKEND: This function wil retrieve the group information for each group from teh database
+  /*
+  void loadGroupFromData async {
+    final groups = await _firestore.collection('groups').getDocuments();
+    for (var group in groups.documents) {
+      createGroupFromData(group.data); //pass the group's name to the function
+    }
+  }
+  */
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xffb2ffff),
       appBar: AppBar(
+        actions: <Widget>[
+          IconButton( //Logout button in top-right corner
+            icon: Icon(Icons.logout),
+            onPressed: () {
+              //_auth.signOut(); /////BACKEND!!! - SIGNING USER OUT
+              Navigator.pop(context);
+            },
+          ),
+        ],
         title: Text('My Groups'),
         titleTextStyle: TextStyle(
           fontWeight: FontWeight.bold,
@@ -57,6 +115,9 @@ class _HomeScreenState extends State<HomeScreen> {
           onPressed: () {
             setState(() {
               createGroup();
+              ///////ATTENTION BACKEND!!!!! - adding a new group to the user's database/////////
+              //_firestore.collection('groups').add({
+              // 'group name': groupName});
             });
           },
           foregroundColor: Colors.black,

@@ -11,7 +11,7 @@ class  LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-
+  //final _auth = FirebaseAuth.instance; //BACKEND
   String enteredEmail = '';
   String enteredPassword = '';
 
@@ -62,11 +62,12 @@ class _LoginScreenState extends State<LoginScreen> {
               height: 30.0,
             ),
             TextField(
+              keyboardType: TextInputType.emailAddress, //makes it so that email typing keyboard appears
               style: TextStyle(
                 color: Color(0xFF083939),
               ),
               decoration: InputDecoration(
-                //might want to create InputDecoartion as a constant later on to modularize code
+                //might want to create InputDecoration as a constant later on to modularize code
                 filled: true,
                 fillColor: Colors.white,
                 hintText: 'Email',
@@ -85,6 +86,7 @@ class _LoginScreenState extends State<LoginScreen> {
               height: 20.0,
             ),
             TextField(
+              obscureText: true, //makes it so that password being typed can't be seen
               style: TextStyle(
                 color: Color(0xFF083939),
               ),
@@ -114,9 +116,21 @@ class _LoginScreenState extends State<LoginScreen> {
                 borderRadius: BorderRadius.circular(30.0),
                 elevation: 5.0,
                 child: MaterialButton(
-                  onPressed: () {
+                  onPressed: () /*async*/{
+                    ////////logging in a user//////////ATTENTION BACKEND!!!!!!
+                    //try{
+                    //final user = await _auth.signInWithEmailAndPassword(email: enteredEmail, password: enteredPassword);
+                    //if(user != null) {
+                    //Navigator.pushNamed(context, HomeScreen.id);
+                    //}
+                    //}
+                    //catch (e) {
+                    //print(e);
+                    //}
+                    ////////////////////////////////////////////////////////////
+
                     //Go to Home screen.
-                    Navigator.pushNamed(context, HomeScreen.id);
+                    Navigator.pushNamed(context, HomeScreen.id);//this line of code will be deleted when user authentication is activated
                   },
                   minWidth: 200.0,
                   height: 42.0,
