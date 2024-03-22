@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(const MyApp());
+//void main() => runApp(const MyApp());
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class BucketListGroupViewer extends StatelessWidget {
+
+  static const String id = "bucket_list_group_viewer";
+  const BucketListGroupViewer({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

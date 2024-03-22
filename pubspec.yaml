@@ -72,6 +72,7 @@ flutter:
     - assets/images/BB_Nav_Messages.png
     - assets/images/BB_Nav_Profile.png
     - assets/images/BB_Nav_Calendar.png
+    - assets/images/BB_Example_Pfp.png
     - android/app/src/main/res/drawable/bb_splash_screen.png
 
   # To add assets to your application, add an assets section, like this:

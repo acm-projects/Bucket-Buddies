@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'bucketlist_group_viewer.dart';
+import 'login_screen.dart';
+import 'profile.dart';
 
-void main() => runApp(const MyApp());
+void main() => runApp(const BottomNav());
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class BottomNav extends StatelessWidget {
+  static const String id = "bottom_navbar";
+  const BottomNav({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -50,11 +54,36 @@ class MyApp extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Image.asset('assets/images/BB_Nav_Home.png'),
-                    Image.asset('assets/images/BB_Nav_Calendar.png'),
-                    Image.asset('assets/images/BB_Add_Group.png'),
-                    Image.asset('assets/images/BB_Nav_Messages.png'),
-                    Image.asset('assets/images/BB_Nav_Profile.png'),
+                    InkWell(
+                      onTap: () {
+                        Navigator.pushNamed(context, LoginScreen.id); // Navigate to LoginScreen
+                      },
+                      child: Image.asset('assets/images/BB_Nav_Home.png'),
+                    ),
+                    InkWell(
+                      onTap: () {
+                        Navigator.pushNamed(context, BucketListGroupViewer.id); // Navigate to Group Event View
+                      },
+                      child: Image.asset('assets/images/BB_Nav_Calendar.png'),
+                    ),
+                    InkWell(
+                      onTap: () {
+                        //Navigator.pushNamed(context, AddEvent.id);
+                      },
+                      child: Image.asset('assets/images/BB_Add_Group.png'),
+                    ),
+                    InkWell(
+                      onTap: () {
+                        //Navigator.pushNamed(context, ThreadScreen.id);
+                      },
+                      child: Image.asset('assets/images/BB_Nav_Messages.png'),
+                    ),
+                    InkWell(
+                      onTap: () {
+                        Navigator.pushNamed(context, ProfileScreen.id);
+                      },
+                      child: Image.asset('assets/images/BB_Nav_Profile.png'),
+                    ),
                   ],
                 ),
               ),
