@@ -4,7 +4,7 @@ import 'welcome_screen.dart';
 import 'bucketlist_group_viewer.dart';
 import 'login_screen.dart';
 import 'signup_screen.dart';
-//import 'group_info.dart';
+import 'group_info.dart';
 import 'bottom_navbar.dart';
 import 'profile.dart';
 

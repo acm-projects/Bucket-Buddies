@@ -25,6 +25,12 @@ flutter:
     - family: Baloo
       fonts:
         - asset: assets/Baloo-Regular.ttf
+    - family: LuckiestGuy
+      fonts:
+        - asset: fonts/LuckiestGuy-Regular.ttf
+    - family: LatoRegular
+      fonts:
+        - asset: fonts/Lato-Regular.ttf
 
 
 
@@ -40,15 +46,6 @@ flutter:
     - assets/images/BB_Nav_Calendar.png
     - assets/images/BB_Example_Pfp.png
     - android/app/src/main/res/drawable/bb_splash_screen.png
+    - assets/BucketBuddiesLogo.png
 
-  assets:
-    - images/BucketBuddiesLogo.png
-
-  fonts:
-     - family: LuckiestGuy
-       fonts:
-         - asset: fonts/LuckiestGuy-Regular.ttf
-     - family: LatoRegular
-       fonts:
-         - asset: fonts/Lato-Regular.ttf
 
