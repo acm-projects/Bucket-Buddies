@@ -1,4 +1,4 @@
-
+f
 ![bucketbuds](https://github.com/acm-projects/Bucket-Buddies/assets/94258142/666a065d-bc28-4e89-973c-83d0119da3ef)
 
 # Bucket-Buddies
@@ -102,6 +102,7 @@ Have you ever had a bucket list of things to do with your friends but had troubl
   - [Tutorials](https://learning.postman.com/docs/introduction/overview/)
 - [Pitch](https://pitch.com/)
 - [Canva](https://www.canva.com/)
+- Jonathan
 
 ## Meet the team!
 

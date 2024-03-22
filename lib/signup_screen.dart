@@ -1,352 +1,167 @@
+import 'package:bucket_buddies_frontend/home_screen.dart';
 import 'package:flutter/material.dart';
 
-//void main() => runApp(const MyApp());
-
-class SignUpScreen extends StatelessWidget {
-
-  static const String id = "signup_screen";
-  const SignUpScreen({Key? key}) : super(key: key);
+class SignUpScreen extends StatefulWidget {
+  static const String id = 'signup_screen';
 
   @override
+  _SignUpScreenState createState() => _SignUpScreenState();
+}
+
+class _SignUpScreenState extends State<SignUpScreen> {
+
+  //variables to store user input in sign up page text fields
+  String userName = '';
+  String userEmail = '';
+  String userPassword = '';
+  
+  @override
   Widget build(BuildContext context) {
-    double ffem = 1.0; // This represents the font size scaling factor
-    double fem = 1.0;
-    return MaterialApp(
-      home: Scaffold(
-        body: SingleChildScrollView(
-          child: buildBody(ffem, fem),
+    return Scaffold(
+      //backgroundColor: Color(0xFF083939),
+      backgroundColor: Color(0xffb2ffff),
+      appBar: AppBar(
+        title: Text('Sign Up'),
+        titleTextStyle: TextStyle(
+          fontWeight: FontWeight.bold,
+          fontFamily: 'LatoRegular',
+          fontSize: 25.0,
         ),
+        backgroundColor: Color(0xFF19ADAD),
       ),
-    );
-  }
-
-  Widget buildBody(double ffem, double fem) {
-    return Container(
-      padding: EdgeInsets.fromLTRB(25 * fem, 126 * fem, 25 * fem, 263 * fem),
-      width: double.infinity,
-      decoration: const BoxDecoration(
-        color: Color(0xffb2ffff),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          buildSignUpText(ffem),
-          buildEmailContainer(ffem, fem),
-          buildPasswordContainer(ffem, fem),
-          buildConfirmPasswordContainer(ffem, fem),
-          buildSignUpButton(ffem, fem),
-        ],
-      ),
-    );
-  }
-
-  Widget buildSignUpText(double ffem) {
-    return Container(
-      margin: EdgeInsets.fromLTRB(0, 0, 210 * ffem, 43 * ffem),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Container(
-            margin: EdgeInsets.fromLTRB(0, 0, 0, 5 * ffem),
-            child: Text(
-              'Sign up',
+      body: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 24.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            SizedBox(
+              height: 200.0,
+            ),
+            Text(
+              ' Bucket Buddies',
               style: TextStyle(
-                fontFamily: 'Baloo',
-                fontSize: 24 * ffem,
-                fontWeight: FontWeight.w400,
-                height: 1.2575 * ffem,
-                color: const Color(0xff1e1e1e),
+                color: Color(0xFF19ADAD),
+                fontFamily: 'LuckiestGuy',
+                fontSize: 50.0,
               ),
             ),
-          ),
-          Text(
-            'Welcome to Bucket Buddies!',
-            style: TextStyle(
-              fontFamily: 'Baloo',
-              fontSize: 13 * ffem,
-              fontWeight: FontWeight.w400,
-              height: 1.2575 * ffem,
-              color: const Color(0xff1e1e1e),
+            SizedBox(
+              height: 30.0,
             ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget buildEmailContainer(double ffem, double fem) {
-    return Container(
-      margin: EdgeInsets.fromLTRB(0, 0, 0, 24 * fem),
-      width: double.infinity,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Container(
-            margin: EdgeInsets.fromLTRB(3 * fem, 0, 0, 11 * fem),
-            child: Text(
-              'Email Address:',
+            Text(
+              'Create Your Account',
               style: TextStyle(
-                fontFamily: 'Baloo',
-                fontSize: 14 * ffem,
-                fontWeight: FontWeight.w400,
-                height: 1.2575 * ffem,
-                color: const Color(0xff000000),
+                color: Color(0xFF19ADAD),
+                fontFamily: 'LatoRegular',
+                fontSize: 25.0,
+                fontWeight: FontWeight.bold,
               ),
             ),
-          ),
-          Container(
-            padding: EdgeInsets.fromLTRB(15 * fem, 12 * fem, 15 * fem, 12 * fem),
-            width: double.infinity,
-            height: 48 * fem,
-            decoration: BoxDecoration(
-              border: Border.all(color: const Color(0xff61a2b1), width: 2), // Set the border width here
-              color: const Color(0xffffffff),
-              borderRadius: BorderRadius.circular(10 * fem),
+            SizedBox(
+              height: 30.0,
             ),
-            child: Container(
-              padding: EdgeInsets.fromLTRB(2 * fem, 2 * fem, 0, 4 * fem),
-              width: 130 * fem,
-              height: double.infinity,
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Container(
-                    margin: EdgeInsets.fromLTRB(0, 2 * fem, 9.5 * fem, 0),
-                    width: 20 * fem,
-                    height: 16 * fem,
-                    child: Image.asset(
-                      'assets/images/BB_Email_Icon.png',
-                      width: 20 * fem,
-                      height: 16 * fem,
-                      fit: BoxFit.contain,
-                    ),
-                  ),
-                  Text(
-                    'Enter your email',
-                    style: TextStyle(
-                      fontFamily: 'Baloo',
-                      fontSize: 14 * ffem,
-                      fontWeight: FontWeight.w400,
-                      height: 1.2575 * ffem,
-                      color: const Color(0xffcacaca),
-                    ),
-                  ),
-                ],
+            TextField(
+              style: TextStyle(
+                color: Color(0xFF083939),
               ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget buildPasswordContainer(double ffem, double fem) {
-    return Container(
-      margin: EdgeInsets.fromLTRB(0, 0, 0, 24 * fem),
-      width: double.infinity,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Container(
-            margin: EdgeInsets.fromLTRB(3 * fem, 0, 0, 8 * fem),
-            child: RichText(
-              text: TextSpan(
-                style: TextStyle(
-                  fontFamily: 'Poppins',
-                  fontSize: 14 * ffem,
-                  fontWeight: FontWeight.w700,
-                  height: 1.5 * ffem,
-                  color: const Color(0xff000000),
+              decoration: InputDecoration(
+                //might want to craete this as a constant later on
+                filled: true,
+                fillColor: Colors.white,
+                hintText: 'Name',
+                hintStyle: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'LatoRegular',
+                  fontSize: 17.0,
                 ),
-                children: [
-                  TextSpan(
-                    text: 'Create Password:',
-                    style: TextStyle(
-                      fontFamily: 'Baloo',
-                      fontSize: 14 * ffem,
-                      fontWeight: FontWeight.w400,
-                      height: 1.2575 * ffem,
-                      color: const Color(0xff000000),
-                    ),
-                  ),
-                  const TextSpan(
-                    text: '',
-                  ),
-                ],
               ),
+              onChanged: (value){
+                userName = value; //assign entered name to userName variable
+                //print(name);
+              },
             ),
-          ),
-          SizedBox(
-            width: double.infinity,
-            height: 48 * fem,
-            child: Container(
-              padding: EdgeInsets.fromLTRB(18 * fem, 14 * fem, 11 * fem, 12 * fem),
-              width: double.infinity,
-              height: double.infinity,
-              decoration: BoxDecoration(
-                border: Border.all(color: const Color(0xff61a2b1), width: 2), // Set the border width here
-                color: const Color(0xffffffff),
-                borderRadius: BorderRadius.circular(10 * fem),
-              ),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Container(
-                    margin: EdgeInsets.fromLTRB(0, 0, 12 * fem, 0),
-                    width: 18 * fem,
-                    height: 20 * fem,
-                    child: Image.asset(
-                      'assets/images/BB_Password_Icon.png',
-                      width: 18 * fem,
-                      height: 20 * fem,
-                      fit: BoxFit.contain,
-                    ),
-                  ),
-                  Container(
-                    margin: EdgeInsets.fromLTRB(0, 1.5 * fem, 112 * fem, 1 * fem),
-                    child: Text(
-                      'Enter a new password',
-                      style: TextStyle(
-                        fontFamily: 'Baloo',
-                        fontSize: 14 * ffem,
-                        fontWeight: FontWeight.w400,
-                        height: 1.2575 * ffem,
-                        color: const Color(0xffcacaca),
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    width: 22 * fem,
-                    height: 22 * fem,
-                    child: Image.asset(
-                      'assets/images/BB_Hide_Password_Icon.png',
-                      width: 22 * fem,
-                      height: 22 * fem,
-                      fit: BoxFit.contain,
-                    ),
-                  ),
-                ],
-              ),
+            SizedBox(
+              height: 20.0,
             ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget buildConfirmPasswordContainer(double ffem, double fem) {
-    return Container(
-      margin: EdgeInsets.fromLTRB(0, 0, 0, 140 * fem),
-      width: double.infinity,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Container(
-            margin: EdgeInsets.fromLTRB(3 * fem, 0, 0, 8 * fem),
-            child: RichText(
-              text: TextSpan(
-                style: TextStyle(
-                  fontFamily: 'Poppins',
-                  fontSize: 14 * ffem,
-                  fontWeight: FontWeight.w700,
-                  height: 1.5 * ffem,
-                  color: const Color(0xff000000),
+            TextField(
+              style: TextStyle(
+                color: Color(0xFF083939),
+              ),
+              decoration: InputDecoration(
+                //might want to create InputDecoartion as a constant later on to modularize code
+                filled: true,
+                fillColor: Colors.white,
+                hintText: 'Email',
+                hintStyle: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'LatoRegular',
+                  fontSize: 17.0,
                 ),
-                children: [
-                  TextSpan(
-                    text: 'Confirm Your Password:',
-                    style: TextStyle(
-                      fontFamily: 'Baloo',
-                      fontSize: 14 * ffem,
-                      fontWeight: FontWeight.w400,
-                      height: 1.2575 * ffem,
-                      color: const Color(0xff000000),
-                    ),
-                  ),
-                  const TextSpan(
-                    text: '',
-                  ),
-                ],
               ),
+              onChanged: (value){
+                userEmail = value; //assign entered email to userEmail variable
+                //print(userEmail);
+              },
             ),
-          ),
-          SizedBox(
-            width: double.infinity,
-            height: 48 * fem,
-            child: Container(
-              padding: EdgeInsets.fromLTRB(18 * fem, 14 * fem, 11 * fem, 12 * fem),
-              width: double.infinity,
-              height: double.infinity,
-              decoration: BoxDecoration(
-                border: Border.all(color: const Color(0xff61a2b1), width: 2), // Set the border width here
-                color: const Color(0xffffffff),
-                borderRadius: BorderRadius.circular(10 * fem),
-              ),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Container(
-                    margin: EdgeInsets.fromLTRB(0, 0, 12 * fem, 0),
-                    width: 18 * fem,
-                    height: 20 * fem,
-                    child: Image.asset(
-                      'assets/images/BB_Password_Icon.png',
-                      width: 18 * fem,
-                      height: 20 * fem,
-                      fit: BoxFit.contain,
-                    ),
-                  ),
-                  Container(
-                    margin: EdgeInsets.fromLTRB(0, 1.5 * fem, 103 * fem, 1 * fem),
-                    child: Text(
-                      'Confirm your password',
-                      style: TextStyle(
-                        fontFamily: 'Baloo',
-                        fontSize: 14 * ffem,
-                        fontWeight: FontWeight.w400,
-                        height: 1.2575 * ffem,
-                        color: const Color(0xffcacaca),
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    width: 22 * fem,
-                    height: 22 * fem,
-                    child: Image.asset(
-                      'assets/images/BB_Hide_Password_Icon.png',
-                      width: 22 * fem,
-                      height: 22 * fem,
-                      fit: BoxFit.contain,
-                    ),
-                  ),
-                ],
-              ),
+            SizedBox(
+              height: 20.0,
             ),
-          ),
-        ],
-      ),
-    );
-  }
+            TextField(
+              style: TextStyle(
+                color: Color(0xFF083939),
+              ),
+              decoration: InputDecoration(
+                //might want to craete this as a constant later on
+                filled: true,
+                fillColor: Colors.white,
+                hintText: 'Password',
+                hintStyle: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'LatoRegular',
+                  fontSize: 17.0,
+                ),
+              ),
+              onChanged: (value){
+                userPassword = value; //assign entered password to userPassword variable
+                //print(userPassword);
+              },
+            ),
+            SizedBox(
+              height: 60.0,
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(vertical: 16.0),
+              child: Material(
+                color: Color(0xFF19ADAD),
+                borderRadius: BorderRadius.circular(30.0),
+                elevation: 5.0,
+                child: MaterialButton(
+                  onPressed: () {
+                    //for now, sign up will lead to home screen. Might want to add confirmation screen later
+                    //to let user know they've successfully created an account
+                    Navigator.pushNamed(context, HomeScreen.id);
 
-  Widget buildSignUpButton(double ffem, double fem) {
-    return Container(
-      margin: EdgeInsets.fromLTRB(1 * fem, 0, 0, 0),
-      width: 342 * fem,
-      height: 50 * fem,
-      decoration: BoxDecoration(
-        color: const Color(0xff1ed2d2),
-        borderRadius: BorderRadius.circular(34 * fem),
-      ),
-      child: Center(
-        child: Text(
-          'Sign Up',
-          style: TextStyle(
-            fontFamily: 'Baloo',
-            fontSize: 14 * ffem,
-            fontWeight: FontWeight.w400,
-            height: 1.2575 * ffem,
-            color: const Color(0xffffffff),
-          ),
+                    //also, may need some sort of loading screen while we're waiting on backend to authenticate user
+                    //(this applies to both the sign up and login pages)
+                  },
+                  minWidth: 200.0,
+                  height: 42.0,
+                  child: Text(
+                    'Sign Up',
+                    style:
+                    TextStyle (
+                      height: 2.0,
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: 'AcmeRegular',
+                      fontSize: 27.0,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );

@@ -1,6 +1,6 @@
-//import 'package:bucket_buddies_frontend/home_screen.dart';
+import 'package:bucket_buddies_frontend/home_screen.dart';
 import 'package:flutter/material.dart';
-//import 'welcome_screen.dart';
+import 'welcome_screen.dart';
 import 'bucketlist_group_viewer.dart';
 import 'login_screen.dart';
 import 'signup_screen.dart';
@@ -34,16 +34,14 @@ class BucketBuddies extends StatelessWidget {
           ),
         ),
       ),
-      //creating map for navigating pages
-      home: const BottomNav(),
+      initialRoute: WelcomeScreen.id,
       routes: {
-        //WelcomeScreen.id: (context) => WelcomeScreen(),
-        LoginScreen.id: (context) => const LoginScreen(),
-        SignUpScreen.id: (context) => const SignUpScreen(),
-        //HomeScreen.id: (context) => HomeScreen(groupName: '',),
-        //GroupInfo.id: (context) => GroupInfo(),
-        ProfileScreen.id: (context) => const ProfileScreen(),
-        BucketListGroupViewer.id: (context) => const BucketListGroupViewer(),
+        WelcomeScreen.id: (context) => WelcomeScreen(),
+        LoginScreen.id: (context) => LoginScreen(),
+        SignUpScreen.id: (context) => SignUpScreen(),
+        HomeScreen.id: (context) => HomeScreen(groupName: '',),
+        GroupInfo.id: (context) => GroupInfo(),
+        BucketListGroupViewer.id: (context) => BucketListGroupViewer(),
       },
     );
   }
